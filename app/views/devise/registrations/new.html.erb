@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-sm-10 mx-auto my-3 border p-3">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <h1>新規登録</h1>
+      <div class="col">
+        <%= f.label :name, "名前" %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "col-12" %>
+      </div>
+      <div class="col">
+        <%= f.label :email, "Eメール" %><br />
+        <%= f.email_field :email, autocomplete: "email", class: "col-12" %>
+      </div>
+      <div class="col">
+        <%= f.label :password, "パスワード" %><br />
+        <%= f.password_field :password, autocomplete: "current-password", class: "col-12" %>
+      </div>
+      <div class="col">
+        <%= f.label :password_confirmation, "確認用パスワード" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-12" %>
+      </div>
+      <div class="col-12 my-3">
+        <%= f.submit "新規登録", class: "btn btn-success col-12 mb-2" %>
+        <div class="legal-text">
+          続行することで、Hogezonの
+          <%= link_to "利用規約", "" %>
+          および
+          <%= link_to "プライバシー規約", "" %>
+          に同意するものとみなされます。
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
