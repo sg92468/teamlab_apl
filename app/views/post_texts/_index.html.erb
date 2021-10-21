@@ -1,0 +1,21 @@
+
+<% post_texts.each do |post_text| %>
+  <div class="card-deck d-inline-flex col-md-4 col-xs-6 mt-3">
+    <div class="card border">
+      <div class="card-img mt-2">
+        <%= link_to attachment_image_tag(post_text, :image, format: "jpeg", fallback: "no_image_photo.jpg", class: "rounded col-12 align-item-start d-flex image-photo"), post_text_path(post_text.id) %>
+      </div>
+      <div class="card-body">
+        <p class="card-title">
+          タイトル: <%= post_text.title %>
+          <br/>
+          カテゴリー: <%= post_text.category %>
+          <br/>
+          募集人数: <%= post_text.num %>
+          <br/>
+          詳細文: <%= post_text.body %>
+        </p>
+      </div>
+    </div>
+  </div>
+<% end %>

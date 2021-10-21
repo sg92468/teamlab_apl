@@ -1,0 +1,44 @@
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-sm-12 d-block justify-content-center mb-5 mt-3">
+      <h2>
+        <%= @post_text.name %>
+      </h2>
+      <div class="col-12 d-flex">
+        <div class="col-5">
+        <%= attachment_image_tag(@post_text, :image, format: "jpeg", fallback: "no_image_photo.jpg", class: "rounded mb-3 col-12") %>
+        <% if @post_text.user == current_user %>
+        <div class="col d-flex justify-content-center">
+          <%= link_to "編集", edit_post_text_path(@post_text), class: "btn btn-success col-3 " %>
+          <%= link_to "削除", post_text_path(@post_text), method: :delete, class: "btn btn-danger col-3 ml-3", data: { confirm: '本当に消しますか?' } %>
+        </div>
+        <% end %>
+        </div>
+        <div class="col-7 d-block justify-content-center">
+          <table class="table col-12">
+            <tr>
+              <th class="table-active">作成者</th>
+              <td class="align-middle"><%= @post_text.user.name %></td>
+            </tr>
+            <tr>
+              <th class="table-active">タイトル</th>
+              <td class="align-middle"><%= link_to @post_text.title %></td>
+            </tr>
+            <tr>
+              <th class="table-active">カテゴリー</th>
+              <td class="align-middle"><%= link_to @post_text.category %></td>
+            </tr>
+            <tr>
+              <th class="table-active">募集人数</th>
+              <td class="align-middle"><%= @post_text.num %></td>
+            </tr>
+            <tr>
+              <th class="table-active">詳細</th>
+              <td class="align-middle"><%= @post_text.body %></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
