@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
 
-  resources :post_texts, only: [:new, :create, :index, :show, :destroy]
+  resources :post_texts
   resources :users, only: [:show, :edit, :update]
 end

@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_10_21_063839) do
 
   create_table "post_texts", force: :cascade do |t|
     t.string "title"
-    t.integer "category"
+    t.integer "category_id"
     t.integer "num"
     t.text "body"
     t.string "image_id"

@@ -2,7 +2,7 @@
 <div class="container mb-5">
   <div class="row my-3">
     <div class="col-sm-10 d-block justify-content-center mx-auto mb-5">
-      <h2>投稿_新規登録</h2>
+      <h2>投稿_編集</h2>
       <% if @post_text.errors.any? %>
         <div class = "alert col rounded border bg-light">
           <ul>
@@ -14,14 +14,14 @@
       <% end %>
       <div class="col-12 d-flex justify-content-center mt-3">
         <%= form_with model:@post_text, local:true do |f| %>
-        <table class="table border">
+        <table class="table">
           <tr>
             <th class="table-active">トップ画像</th>
             <td class="align-middle"><%= f.attachment_field :image %></td>
           </tr>
           <tr>
             <th class="table-active">タイトル</th>
-            <td class="align-middle"><%= f.text_field :title, placeholder: "タイトル", size: "30", class: "form-control" %></td>
+            <td class="align-middle"><%= f.text_field :title, placeholder: "タイトル", size: "30", include_blank: "--", class: "form-control" %></td>
           </tr>
           <tr>
             <th class="table-active">カテゴリー</th>
@@ -29,7 +29,7 @@
           </tr>
           <tr>
             <th class="table-active">募集人数</th>
-            <td class="align-middle"><%= f.select :num, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], include_blank: "--", class: "form-control" %> 人</td>
+            <td class="align-middle"><%= f.select :num, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], class: "form-control" %> 人</td>
           </tr>
           <tr>
             <th class="table-active">詳細</th>
@@ -37,7 +37,7 @@
           </tr>
         </table>
         <div class="actions text-center">
-          <%= f.submit "作成", class: "btn btn-success col-4 mt-2" %>
+          <%= f.submit "保存", class: "btn btn-success col-4 mt-2" %>
         </div>
         <% end %>
       </div>
