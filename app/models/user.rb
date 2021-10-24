@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :post_texts, dependent: :destroy
   attachment :image
-  
+
   # ゲストログインのため定義
   def self.guest
   find_or_create_by!(email: 'guest@example.com') do |user|

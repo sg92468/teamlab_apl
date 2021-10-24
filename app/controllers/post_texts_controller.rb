@@ -14,11 +14,24 @@ class PostTextsController < ApplicationController
   end
 
   def index
-    @post_texts = PostText.page(params[:page]).per(12).reverse_order
+    @post_texts = PostText.page(params[:page]).per(5).reverse_order
   end
 
   def show
     @post_text = PostText.find(params[:id])
+  end
+
+  def edit
+    @post_text = PostText.find(params[:id])
+  end
+
+  def update
+    @post_text = PostText.find(params[:id])
+    if @post_text.update(post_text_params)
+      redirect_to post_text_path(@post_text.id)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -29,6 +42,6 @@ class PostTextsController < ApplicationController
 
   private
   def post_text_params
-    params.require(:post_text).permit(:title, :category, :num, :body, :image)
+    params.require(:post_text).permit(:title, :category_id, :num, :body, :image)
   end
 end

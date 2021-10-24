@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-12 d-block justify-content-center mb-5 mt-3">
       <h2>
-        <%= @post_text.name %>
+        <%= @post_text.title %>
       </h2>
       <div class="col-12 d-flex">
         <div class="col-5">
@@ -22,11 +22,11 @@
             </tr>
             <tr>
               <th class="table-active">タイトル</th>
-              <td class="align-middle"><%= link_to @post_text.title %></td>
+              <td class="align-middle"><%= @post_text.title %></td>
             </tr>
             <tr>
               <th class="table-active">カテゴリー</th>
-              <td class="align-middle"><%= link_to @post_text.category %></td>
+              <td class="align-middle"><%= @post_text.category.name %></td>
             </tr>
             <tr>
               <th class="table-active">募集人数</th>

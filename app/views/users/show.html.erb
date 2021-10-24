@@ -33,8 +33,8 @@
           <tbody>
           <% @post_texts.each do |post_text| %>
             <tr>
-              <td class="text-center"><%= link_to post_text.name, post_text_path(post_text) %></td>
-              <td class="text-center"><%= post_text.category %></td>
+              <td class="text-center"><%= link_to post_text.title, post_text_path(post_text) %></td>
+              <td class="text-center"><%= post_text.category.name %></td>
               <td class="text-center"><%= post_text.num %></td>
             </tr>
           <% end %>
