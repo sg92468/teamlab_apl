@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## ふぁんらぼ
 
-Things you may want to cover:
+## 概要
+多人数で行いたい行事や遊びなどがある時に募集するためのサイト。
+コロナ禍で人との関わりが薄くなっている現状を改善するために作成。
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby(2.6.3p62),SQL
+- フレームワーク：Ruby on Rails(5.2.6)
+- JSライブラリ：jQuery
+- IDE：Cloud9
